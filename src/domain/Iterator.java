@@ -1,8 +1,8 @@
 package domain;
 
-public interface Iterator {
+public interface Iterator <E>{
 
-    public Object getNext();
+    public <E> E getNext();
     public boolean hasMore();
 
 }

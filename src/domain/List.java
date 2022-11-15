@@ -1,9 +1,9 @@
 package domain;
 
-public interface List {
+public interface List <E> {
 
-    public boolean add (Object object);
-    public Object get (int i);
+    public boolean add (E object);
+    public <E> E get (int i);
     public boolean isEmpty();
     public int size ();
 

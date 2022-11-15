@@ -1,15 +1,15 @@
 package domain;
 
-public class ArrayList implements Iterable, List{
+public class ArrayList<E> implements Iterable, List <E>{
 
-    private Object[] elementos;
+    private E[] elementos;
     private int contador;
     private int totalElementos = 100;
 
-    public ArrayList(){
-        this.elementos = new Object[this.totalElementos];
-        this.contador = 0;
-    } // constructor
+    public ArrayList(E[] elementos, int contador) {
+        this.elementos = elementos;
+        this.contador = contador;
+    }
 
     @Override
     public Iterator createIterator() {
@@ -17,18 +17,14 @@ public class ArrayList implements Iterable, List{
     }
 
     @Override
-    public boolean add(Object object) {
+    public boolean add(E object) {
         if(this.contador <= this.totalElementos){
             this.elementos[contador] = object;
             contador++;
             return true;
         }
         return false;
-    }
 
-    @Override
-    public Object get(int i) {
-        return this.elementos[i];
     }
 
     @Override
@@ -44,4 +40,8 @@ public class ArrayList implements Iterable, List{
         return this.contador;
     }
 
+    @Override
+    public Object get(int i) {
+        return this.elementos[i];
+    }
 }
